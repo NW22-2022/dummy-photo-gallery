@@ -233,7 +233,6 @@ img {
 
   display: grid;
   gap: calc(var(--gap) / 16 * 1rem);
-  -ms-grid-columns: ;
   grid-template-columns: repeat(var(--cols), 1fr);
 }
 
@@ -275,6 +274,10 @@ img {
   transition: 0.3s ease-out;
   transition-property: transform;
   will-change: transform;
+}
+
+.is-drawerActive .globalNav {
+  transform: translateX(0);
 }
 
 .globalNav a {
