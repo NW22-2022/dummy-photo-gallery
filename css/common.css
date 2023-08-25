@@ -334,7 +334,7 @@ img {
   top: 0;
   right: 2.5%;
   bottom: 0;
-  z-index: 1;
+  z-index: 2;
   margin: auto 0;
   width: 24px;
   height: 24px;
@@ -352,6 +352,8 @@ img {
   height: 2px;
   border-radius: 4px;
   background-color: #263238;
+  transition: 0.3s ease-out;
+  transition-property: top, transform, background;
 }
 
 .hamburger__line:before,
@@ -363,6 +365,7 @@ img {
   height: 100%;
   border-radius: inherit;
   background-color: inherit;
+  transition: inherit;
 }
 
 .hamburger__line:before {
@@ -371,6 +374,24 @@ img {
 
 .hamburger__line:after {
   top: 5px;
+}
+
+.is-drawerActive .hamburger__line {
+  background-color: transparent;
+}
+
+.is-drawerActive .hamburger__line:before,
+.is-drawerActive .hamburger__line:after {
+  top: 0;
+  background-color: #fff;
+}
+
+.is-drawerActive .hamburger__line:before {
+  transform: rotate(45deg);
+}
+
+.is-drawerActive .hamburger__line:after {
+  transform: rotate(-45deg);
 }
 
 @media screen and (min-width: 768px) {
